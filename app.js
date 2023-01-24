@@ -48,10 +48,10 @@ const packages = [{
     trackingNumber: 'suz2367'
 }]
 
-function drawPackages(){
+function drawPackages(array){
     let packagesElement = document.getElementById('packages');
     let packageLineup = ''
-    packages.forEach(packages => {
+    array.forEach(packages => {
         packageLineup += `<h2> Recipient: <b class="recipient"> ${packages.to} </b> </h2>`
         packageLineup += `<h2> Priority Level: ${packages.priorityLevel}</h2>`
         packageLineup += `<h2> Is Fragile: ${packages.isFragile}</h2>`
@@ -60,11 +60,43 @@ function drawPackages(){
         packageLineup += `<h2 class="pack-border"></h2>`
     })
     packagesElement.innerHTML = packageLineup
-    console.log('did it work');
+    // console.log('did it work');
 }
 
-let filteredPackages = packages.filter(package => package.weight <= 12)
-console.log(filteredPackages);
+function filterPackagesByPriorityExpress() {
+    const pkgPrio = packages.filter(package => package.priorityLevel == "express")
+    // console.log(pkgPrio);
+    drawPackages(pkgPrio)
+}
+function filterPackagesByPriorityStandard() {
+    const pkgPrio = packages.filter(package => package.priorityLevel == "standard")
+    // console.log(pkgPrio);
+    drawPackages(pkgPrio)
+}
+function filterPackagesByPriorityFree() {
+    const pkgPrio = packages.filter(package => package.priorityLevel == "free")
+    // console.log(pkgPrio);
+    drawPackages(pkgPrio)
+}
+function filterPackagesByFragilityTrue() {
+    const pkgFrag = packages.filter(package => package.isFragile == true)
+    // console.log(pkgFrag);
+    drawPackages(pkgFrag)
+}
+function filterPackagesByFragilityFalse() {
+    const pkgFrag = packages.filter(package => package.isFragile == false)
+    // console.log(pkgFrag);
+    drawPackages(pkgFrag)
+}
+function filterPackagesByWeightHeavy() {
+    const pkgWeigh = packages.filter(package => package.weight >= 4)
+    // console.log(pkgWeigh);
+    drawPackages(pkgWeigh)
+}
+function filterPackagesByWeightLight() {
+    const pkgWeigh = packages.filter(package => package.weight < 4)
+    // console.log(pkgWeigh);
+    drawPackages(pkgWeigh)
+}
 
-
-    drawPackages()
+    drawPackages(packages)

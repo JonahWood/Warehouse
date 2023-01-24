@@ -14,6 +14,18 @@
 
 <main>
     <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <button class="pkg-buttons" onclick="drawPackages(packages)">All Shipments</button>
+                <button class="pkg-buttons" onclick="filterPackagesByPriorityExpress()">Express Shipping</button>
+                <button class="pkg-buttons" onclick="filterPackagesByPriorityStandard()">Standard Shipping</button>
+                <button class="pkg-buttons" onclick="filterPackagesByPriorityFree()">Free Shipping</button>
+                <button class="pkg-buttons" onclick="filterPackagesByFragilityTrue()">Fragile</button>
+                <button class="pkg-buttons" onclick="filterPackagesByFragilityFalse()">Non-Fragile</button>
+                <button class="pkg-buttons" onclick="filterPackagesByWeightLight()">Light</button>
+                <button class="pkg-buttons" onclick="filterPackagesByWeightHeavy()">Heavy</button>
+            </div>
+        </div>
         <div class="row my-3 row-border">
             <div class="col-12">
                 <h1 id="packages"></h1>

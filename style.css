@@ -15,3 +15,10 @@
 .recipient{
     color: #00e1bf;
 }
+
+.pkg-buttons{
+    height: 2em;
+    weight: 2em;
+    background-color: green;
+    border: 2px solid #003e00;
+}
