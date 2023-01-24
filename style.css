@@ -17,8 +17,10 @@
 }
 
 .pkg-buttons{
-    height: 2em;
-    weight: 2em;
+    height: 5em;
+    width: auto;
     background-color: green;
     border: 2px solid #003e00;
+    color: greenyellow;
+    font-family: 'Roboto Mono', monospace;
 }
